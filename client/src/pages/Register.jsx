@@ -258,21 +258,7 @@ export default function Registration() {
             </Link>
           </p>
         </div>
-
-        {/* Security Features */}
-        <div className="mt-6 bg-white/60 backdrop-blur-lg rounded-xl p-4 border border-white/20">
-          <h3 className="text-sm font-semibold text-gray-800 mb-3 text-center">
-            🔐 Your Data is Protected By
-          </h3>
-          <div className="grid grid-cols-3 gap-2">
-            {securityFeatures.map((f, i) => (
-              <div key={i} className="text-center">
-                <f.icon className={`w-5 h-5 mx-auto mb-1 ${f.color}`} />
-                <p className="text-xs text-gray-600">{f.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+    
       </div>
     </div>
   );

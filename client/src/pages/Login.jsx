@@ -195,25 +195,6 @@ export default function Login() {
           </p>
         </form>
 
-        {/* Security Features */}
-        <div className="mt-6 bg-white/60 backdrop-blur-lg rounded-xl p-4 border border-white/20">
-          <h3 className="text-sm font-semibold text-gray-800 mb-3 text-center">
-            🔒 Protected by Enterprise Security
-          </h3>
-          <div className="grid grid-cols-3 gap-2">
-            {securityFeatures.map(({ icon: Icon, text, color }, idx) => (
-              <div key={idx} className="text-center cursor-pointer">
-                <Icon
-                  className={`w-5 h-5 mx-auto mb-1 ${color} hover:scale-110 transition-transform`}
-                />
-                <p className="text-xs text-gray-600 hover:text-gray-800 transition">
-                  {text}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* Footer */}
         <footer className="text-center mt-6 text-xs text-gray-500">
           <p>
