@@ -8,6 +8,8 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import AdminPanel from "./dashboard/adminDashboard/AdminPanel";
 import BankPortalRoot from "./dashboard/bankDashboard/Bank";
+import Userdashboard from "./dashboard/userDashboard/Userdashboard";
+
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/adminpanel" element={<AdminPanel />} />
             <Route path="/bank" element={<BankPortalRoot />} />
+            <Route path="/userdashboard" element={<Userdashboard />} />
           </Routes>
         <Footer />
       </Router>
