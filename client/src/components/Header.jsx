@@ -12,6 +12,8 @@ export default function Header() {
     { to: "/", label: language === "en" ? "Home" : "गृहपृष्ठ" },
     { to: "/about", label: language === "en" ? "About" : "हाम्रोबारे" },
     { to: "/contact", label: language === "en" ? "Contact" : "सम्पर्क" },
+    { to: "/adminpanel", label: language === "en" ? "AdminPanel" : "सम्पर्क" },
+    { to: "/bank", label: language === "en" ? "BankPortal" : "सम्पर्क" },
   ];
 
   const linkClass = (path) =>
