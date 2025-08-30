@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X, Shield, ChevronDown } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import logo from "../../public/e-kyc.png"; // Ensure you have a logo image in the specified path
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,8 +13,8 @@ export default function Header() {
     { to: "/", label: language === "en" ? "Home" : "गृहपृष्ठ" },
     { to: "/about", label: language === "en" ? "About" : "हाम्रोबारे" },
     { to: "/contact", label: language === "en" ? "Contact" : "सम्पर्क" },
-    { to: "/adminpanel", label: language === "en" ? "AdminPanel" : "सम्पर्क" },
-    { to: "/bank", label: language === "en" ? "BankPortal" : "सम्पर्क" },
+    { to: "/adminpanel", label: language === "en" ? "AdminPanel" : "प्रशासन" },
+    { to: "/bank", label: language === "en" ? "BankPortal" : "बैंक पोर्टल" },
   ];
 
   const linkClass = (path) =>
@@ -26,14 +27,13 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-xl shadow-lg border-b border-gray-100/50">
       <div className="container mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
-        {/* Logo */}
         <Link to="/" className="flex items-center space-x-3 group">
-          <div className="p-2.5 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105">
-            <Shield className="h-6 w-6 text-white drop-shadow-sm" />
+          <div className="p-2.5 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105">
+            <img src={logo} alt="e-KYC Logo" className="h-10 object-contain" />
           </div>
-          <span className="text-2xl font-bold bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
-            e-KYC
-          </span>
+          {/* <span className="text-2xl font-bold bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
+        e-KYC
+      </span> */}
         </Link>
 
         {/* Desktop Navigation */}
@@ -51,11 +51,15 @@ export default function Header() {
               onClick={() => setLangDropdownOpen(!langDropdownOpen)}
               className="flex items-center space-x-2 px-4 py-2.5 rounded-lg bg-gray-50/80 hover:bg-gray-100/80 border border-gray-200/60 text-gray-700 font-medium text-sm transition-all duration-300 hover:shadow-md group"
             >
-              <span className="text-base">{language === "en" ? "🇳🇵" : "🇬🇧"}</span>
+              <span className="text-base">
+                {language === "en" ? "🇳🇵" : "🇬🇧"}
+              </span>
               <span>{language === "en" ? "नेपाली" : "English"}</span>
               <ChevronDown
                 size={16}
-                className={`transition-transform duration-300 ${langDropdownOpen ? "rotate-180" : "group-hover:rotate-12"}`}
+                className={`transition-transform duration-300 ${
+                  langDropdownOpen ? "rotate-180" : "group-hover:rotate-12"
+                }`}
               />
             </button>
 
@@ -64,7 +68,9 @@ export default function Header() {
                 <div className="absolute right-0 top-full mt-2 w-44 bg-white/95 backdrop-blur-xl rounded-lg shadow-xl border border-gray-200/50 py-2 z-20">
                   <button
                     className={`w-full px-4 py-2.5 text-left flex items-center space-x-3 hover:bg-gray-50/80 ${
-                      language === "en" ? "text-blue-600 bg-blue-50/80" : "text-gray-700"
+                      language === "en"
+                        ? "text-blue-600 bg-blue-50/80"
+                        : "text-gray-700"
                     }`}
                     onClick={() => {
                       setLanguage("en");
@@ -76,7 +82,9 @@ export default function Header() {
                   </button>
                   <button
                     className={`w-full px-4 py-2.5 text-left flex items-center space-x-3 hover:bg-gray-50/80 ${
-                      language === "np" ? "text-blue-600 bg-blue-50/80" : "text-gray-700"
+                      language === "np"
+                        ? "text-blue-600 bg-blue-50/80"
+                        : "text-gray-700"
                     }`}
                     onClick={() => {
                       setLanguage("np");
@@ -87,7 +95,10 @@ export default function Header() {
                     <span>नेपाली</span>
                   </button>
                 </div>
-                <div className="fixed inset-0 z-10" onClick={() => setLangDropdownOpen(false)}></div>
+                <div
+                  className="fixed inset-0 z-10"
+                  onClick={() => setLangDropdownOpen(false)}
+                ></div>
               </>
             )}
           </div>

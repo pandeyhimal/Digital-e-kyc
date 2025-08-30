@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Shield, Mail, Phone, MapPin, Twitter, Linkedin, Github } from "lucide-react";
+import logo from "../../public/e-kyc.png";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -29,14 +30,18 @@ export default function Footer() {
             
             {/* === Brand Section === */}
             <div className="md:col-span-2">
-              <Link to="/" className="inline-flex items-center space-x-3">
-                <span className="p-2.5 rounded-xl shadow-lg bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
-                  <Shield className="h-5 w-5 text-white" />
-                </span>
-                <span className="text-xl font-bold bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
-                  e-KYC
-                </span>
-              </Link>
+               <Link to="/" className="flex items-center space-x-3 group">
+                    <div className="p-2.5 rounded-xl">
+                      <img
+                        src={logo}
+                        alt="e-KYC Logo"
+                        className="h-10 object-contain"
+                      />
+                    </div>
+                    {/* <span className="text-2xl font-bold bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
+                      e-KYC
+                    </span> */}
+                  </Link>
 
               <p className="mt-2 max-w-md text-gray-600">
                 Secure and seamless digital identity verification for modern financial platforms.
